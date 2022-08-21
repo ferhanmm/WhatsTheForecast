@@ -26,7 +26,7 @@ def lookup(symbol):
         return {
             "location": weather['location']['name'],
             "temp": weather['current']['temp_f'],
-            "zerodayDate": weather['forecast']['forecastday']['0']['date'],
+            "zerodayDate": weather['current']['temp_f'],
             "onedayDate": weather['forecast']['forecastday']['1']['date'],
             "twodayDate": weather['forecast']['forecastday']['2']['date']
             }
