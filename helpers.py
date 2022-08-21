@@ -25,9 +25,9 @@ def lookup(symbol):
         weather = response.json()
         return {
             "location": weather['location']['name'],
-            "temp": weather['current']['temp_f']
-            "zerodayDate": weather['forecast']['forecastday']['0']['date']
-            "onedayDate": weather['forecast']['forecastday']['1']['date']
+            "temp": weather['current']['temp_f'],
+            "zerodayDate": weather['forecast']['forecastday']['0']['date'],
+            "onedayDate": weather['forecast']['forecastday']['1']['date'],
             "twodayDate": weather['forecast']['forecastday']['2']['date']
             }
     
