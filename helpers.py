@@ -26,6 +26,9 @@ def lookup(symbol):
         return {
             "location": weather['location']['name'],
             "temp": weather['current']['temp_f']
+            "0dayDate": weather['forecast']['forecastday']['0']['date']
+            "1dayDate": weather['forecast']['forecastday']['1']['date']
+            "2dayDate": weather['forecast']['forecastday']['2']['date']
             }
     
     except (KeyError, TypeError, ValueError):
