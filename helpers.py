@@ -13,7 +13,8 @@ def lookup(symbol):
     # Contact API
     try:
         api_key = os.environ.get("API_KEY")
-        url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={symbol}&aqi=yes"
+        #url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={symbol}&aqi=yes"
+        url = f"http://api.weatherapi.com/v1/forecast.json?key={api_key}&q={symbol}&days=10&aqi=yes&alerts=no"
         response = requests.get(url)
         response.raise_for_status()
     except requests.RequestException:
