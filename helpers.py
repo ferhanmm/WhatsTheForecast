@@ -27,8 +27,11 @@ def lookup(symbol):
             "location": weather['location']['name'],
             "temp": weather['current']['temp_f'],
             "zerodayDate": weather['forecast']['forecastday'][0]['date'],
+            "zerodayHigh": weather['forecast']['forecastday'][0]['day']['maxtemp_f'],
             "onedayDate": weather['forecast']['forecastday'][1]['date'],
-            "twodayDate": weather['forecast']['forecastday'][2]['date']
+            "onedayHigh": weather['forecast']['forecastday'][1]['day']['maxtemp_f'],
+            "twodayDate": weather['forecast']['forecastday'][2]['date'],
+            "twodayHigh": weather['forecast']['forecastday'][2]['day']['maxtemp_f']
             }
     
     except (KeyError, TypeError, ValueError):

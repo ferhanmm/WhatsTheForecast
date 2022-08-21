@@ -38,7 +38,7 @@ def weather():
         # if stockSymbol == None:
         #    return apology("Symbol doesn't exist")
         # get the symbol, name, and price and render the result page
-        return render_template("weather.html", location = code["location"], temp = code["temp"], zerodayDate = code["zerodayDate"], onedayDate = code["onedayDate"], twodayDate = code["twodayDate"])
+        return render_template("weather.html", location = code["location"], temp = code["temp"], zerodayDate = code["zerodayDate"], zerodayHigh = code["zerodayHigh"], onedayDate = code["onedayDate"], onedayHigh = code["onedayHigh"], twodayDate = code["twodayDate"], twodayHigh = code["twodayHigh"])
 
 # create results page
     # if get, go to quote page
