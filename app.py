@@ -18,8 +18,9 @@ def greet():
     return render_template("greet.html", name=request.form.get("name"))
     #return render_template("greet.html", name=testNum)
 
-
-
+@app.route("/test")
+def test():
+    return render_template("test.html")
 
 @app.route("/weather", methods=["GET", "POST"])
 #@login_required
