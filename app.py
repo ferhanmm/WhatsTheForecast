@@ -1,6 +1,6 @@
 # Greets user via a form using POST and a layout
 #import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Markup
 from helpers import lookup
 
 app = Flask(__name__)
@@ -9,7 +9,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    svg = open('./static/logo.svg').read()
+    return render_template("index.html", logo=Markup(svg))
 
 
 @app.route("/greet", methods=["POST"])
