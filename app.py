@@ -1,7 +1,7 @@
 # Greets user via a form using POST and a layout
 #import os
 from flask import Flask, render_template, request, Markup, jsonify
-from helpers import lookup
+from helpers import lookup, iplookup
 
 app = Flask(__name__)
 
@@ -18,8 +18,13 @@ def index():
     if ip_addr == "127.0.0.1":
         ip_addr = "8.8.8.8"
 
-    return render_template("index.html", logo=Markup(svg), userIP=ip_addr)
+    locationcheck = iplookup(ip_addr)
+    lat=locationcheck["lat"]
+    lon=locationcheck["lon"]
+    region = "{},{}".format(lat, lon)
+    defaultWeather = lookup(region)
 
+    return render_template("index.html", logo=Markup(svg), weather = defaultWeather)
 
 @app.route("/greet", methods=["POST"])
 def greet():
