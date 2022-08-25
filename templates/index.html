@@ -37,7 +37,7 @@
   <li>Low: {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}</li>
 </ul>  
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -98,12 +98,29 @@
         </form>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
-   <!--  <form action="/weather" method="post">
-        <input autocomplete="off" autofocus name="symbol" placeholder="Enter City" type="text">
-        <input type="submit" value="submit">
-    </form> -->
+
+<footer class="p-3 text-bg-dark">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <p class="col-md-4 mb-0 text-muted">© 2022 Company, Inc</p>
+
+      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+      </ul>
+
+    </div>
+  </div>
+</footer>
 
 
 {% endblock %}
