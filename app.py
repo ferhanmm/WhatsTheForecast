@@ -19,10 +19,10 @@ def index():
         ip_addr = "8.8.8.8"
 
     locationcheck = iplookup(ip_addr)
-    lat=locationcheck["lat"]
-    lon=locationcheck["lon"]
-    region = "{},{}".format(lat, lon)
-    defaultWeather = lookup(region)
+    city=locationcheck["city"]
+    region=locationcheck["region"]
+    #region = "{},{}".format(city, region)
+    defaultWeather = lookup("{},{}".format(city, region))
 
     return render_template("index.html", logo=Markup(svg), weather = defaultWeather)
 

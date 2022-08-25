@@ -22,8 +22,8 @@ def iplookup(ip_addr):
     try:
         ip = response.json()
         return {
-            "lat": ip['lat'],
-            "lon": ip['lon']
+            "city": ip['city'],
+            "region": ip['region']
             }
     
     except (KeyError, TypeError, ValueError):
