@@ -1,6 +1,6 @@
 # Greets user via a form using POST and a layout
 #import os
-from flask import Flask, render_template, request, Markup
+from flask import Flask, render_template, request, Markup, jsonify
 from helpers import lookup
 
 app = Flask(__name__)
@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     svg = open('./static/logo.svg').read()
-    ip_addr = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
+    ip_addr = jsonify({'ip': request.remote_addr}), 200
     return render_template("index.html", logo=Markup(svg), userIP=ip_addr)
 
 
