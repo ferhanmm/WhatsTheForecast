@@ -30,7 +30,13 @@
 
 <br><br><br><br><br><br><br><br><br><br><br>
 
-{{weather}}
+<ul>
+  <li>City: {{weather['fullWeather']['location']['name']}}</li>
+  <li>Region: {{weather['fullWeather']['location']['region']}}</li>
+  <li>Current Temp: {{weather['fullWeather']['current']['temp_f']}}</li>
+  <li>High: {{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}}</li>
+  <li>Low: {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}</li>
+</ul>  
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
     <div class="container-fluid">

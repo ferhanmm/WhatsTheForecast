@@ -47,6 +47,7 @@ def lookup(symbol):
     try:
         weather = response.json()
         return {
+            "fullWeather": weather,
             "location": weather['location']['name'],
             "temp": weather['current']['temp_f'],
             "zerodayDate": weather['forecast']['forecastday'][0]['date'],
