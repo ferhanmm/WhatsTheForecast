@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     svg = open('./static/logo.svg').read()
-    ip_addr = request.environ['REMOTE_ADDR']
+    ip_addr = request.access_route[-1]
     return render_template("index.html", logo=Markup(svg), userIP=ip_addr)
 
 
