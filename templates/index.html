@@ -31,8 +31,7 @@
 <br><br><br><br><br><br><br><br><br><br><br>
 
 <ul>
-  <li>City: {{weather['fullWeather']['location']['name']}}</li>
-  <li>Region: {{weather['fullWeather']['location']['region']}}</li>
+  <li>Location: {{weather['fullWeather']['location']['name']}},{{weather['fullWeather']['location']['region']}} </li>
   <li>Current Temp: {{weather['fullWeather']['current']['temp_f']}}</li>
   <li>High: {{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}}</li>
   <li>Low: {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}</li>
