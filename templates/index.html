@@ -29,6 +29,29 @@
 </header>
 
 <br>
+
+<div class="container">
+  <div class="row mb-3 text-center">
+    <div class="col-md-8 themed-grid-col">
+      <div class="pb-3">
+        {{weather['fullWeather']['location']['name']}}, {{weather['fullWeather']['location']['region']}}
+      </div>
+      <div class="row">
+        <div class="col-md-6 themed-grid-col">
+          {{weather['fullWeather']['current']['temp_f']}}<br>
+          High {{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}} &#8226 Low {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}
+        </div>
+        <div class="col-md-6 themed-grid-col">
+          <img src="//cdn.weatherapi.com/weather/64x64/day/113.png"></img>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 themed-grid-col">.col-md-4</div>
+  </div>
+</div>
+
+<br>
+
 <div class="container themed-container text-center">
   <ul>
     <li>Location: {{weather['fullWeather']['location']['name']}}, {{weather['fullWeather']['location']['region']}} </li>
