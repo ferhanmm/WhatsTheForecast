@@ -35,10 +35,10 @@
     <div class="col-md-3 themed-grid-col">
       empty column
     </div>
-    <div class="col-md-3 themed-grid-col">
+    <div class="col-md-6 themed-grid-col">
       <div class="row">
         <div class="col-md-6 themed-grid-col">
-          <h4>{{weekday}}</h4>
+          <h4><strong>{{weekday}}</strong></h4>
           <h6>{{currentDate}}</h6>
           <p>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
@@ -56,9 +56,6 @@
     <div class="col-md-3 themed-grid-col">
       High {{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}} &#8226 Low {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}
     </div>
-    <div class="col-md-3 themed-grid-col">
-      empty column
-    </div>
   </div>
 </div>
 
@@ -66,7 +63,8 @@
 
 <div class="grid">
   <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</div>
-  <div>          <h4>{{weekday}}</h4>
+  <div>
+    <h4><strong>{{weekday}}</strong></h4>
     <h6>{{currentDate}}</h6>
     <p>
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
