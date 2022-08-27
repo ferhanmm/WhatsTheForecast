@@ -1,7 +1,10 @@
 # Greets user via a form using POST and a layout
 #import os
+import imp
 from flask import Flask, render_template, request, Markup, jsonify
 from helpers import lookup, iplookup
+from datetime import date, datetime
+import calendar
 
 app = Flask(__name__)
 
@@ -9,6 +12,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
+    #curr_date = date.today()
+    dayofWeek = calendar.day_name[(date.today()).weekday()]
+    dateCurrent = (date.today()).strftime("%m/%d/%y")
     svg = open('./static/logo.svg').read()
     if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
         ip_addr = request.environ['REMOTE_ADDR']
@@ -24,7 +30,7 @@ def index():
 
     defaultWeather = lookup("{},{}".format(city, region))
 
-    return render_template("index.html", logo=Markup(svg), weather = defaultWeather)
+    return render_template("index.html", logo=Markup(svg), weather = defaultWeather, weekday = dayofWeek, currentDate = dateCurrent)
 
 @app.route("/greet", methods=["POST"])
 def greet():
