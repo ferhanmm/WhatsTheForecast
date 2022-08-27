@@ -32,7 +32,10 @@
 
 <div class="container">
   <div class="row mb-3">
-    <div class="col-md-8 themed-grid-col">
+    <div class="col-md-3 themed-grid-col">
+      empty column
+    </div>
+    <div class="col-md-3 themed-grid-col">
       <div class="row">
         <div class="col-md-6 themed-grid-col">
           <h4>{{weekday}}</h4>
@@ -48,18 +51,18 @@
           <h1><strong>{{weather['fullWeather']['current']['temp_f']}}</strong></h1>
           <p><strong>{{weather['fullWeather']['current']['condition']['text']}}</strong></p>
         </div>
-        <div class="col-md-6 themed-grid-col">
-          empty
-        </div>
       </div>
     </div>
-    <div class="col-md-4 themed-grid-col">
+    <div class="col-md-3 themed-grid-col">
       High {{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}} &#8226 Low {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}
+    </div>
+    <div class="col-md-3 themed-grid-col">
+      empty column
     </div>
   </div>
 </div>
 
-<br>
+<br><br><br><br>
 
 <div class="container themed-container text-center">
   <ul>
