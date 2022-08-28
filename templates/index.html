@@ -33,7 +33,6 @@
 <div class="container">
   <div class="row mb-3">
     <div class="col-md-3 themed-grid-col">
-      empty column
     </div>
     <div class="col-md-6 themed-grid-col">
       <div class="row">
@@ -48,13 +47,13 @@
           </p>
           <br><br>
           <img src="{{weather['fullWeather']['current']['condition']['icon']}}"></img>
-          <h1><strong>{{weather['fullWeather']['current']['temp_f']}}</strong></h1>
+          <h1><strong>{{weather['fullWeather']['current']['temp_f']}}&#176F</strong></h1>
           <p><strong>{{weather['fullWeather']['current']['condition']['text']}}</strong></p>
+          <p>High {{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}} &#8226 Low {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}</p>
         </div>
       </div>
     </div>
     <div class="col-md-3 themed-grid-col">
-      High {{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}} &#8226 Low {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}
     </div>
   </div>
 </div>
@@ -74,7 +73,7 @@
     </p>
     <br><br>
     <img src="{{weather['fullWeather']['current']['condition']['icon']}}"></img>
-    <h1><strong>{{weather['fullWeather']['current']['temp_f']}}</strong></h1>
+    <h1><strong>{{weather['fullWeather']['current']['temp_f']}}&#176F</strong></h1>
     <p><strong>{{weather['fullWeather']['current']['condition']['text']}}</strong></p></div>
   <div>Ducimus quibusdam inventore delectus doloribus dignissimos. Dignissimos quos officia minus exercitationem perspiciatis harum iusto molestiae deleniti quod sunt amet recusandae autem, neque doloremque ad alias eaque consequuntur nesciunt quis eius!</div>
 </div>
