@@ -42,6 +42,8 @@ def index():
 def weather():
    
     # check if POST
+    dayofWeek = calendar.day_name[(date.today()).weekday()]
+    dateCurrent = (date.today()).strftime("%m/%d/%y")
     svg = open('./static/logo.svg').read()
     if request.method == "POST":
         
@@ -52,11 +54,13 @@ def weather():
         # check if stock symbol exists in api call using the lookup
 
         code = lookup(symbol)
+        defaultWeather = lookup(symbol)
+
 
         # if stockSymbol == None:
         #    return apology("Symbol doesn't exist")
         # get the symbol, name, and price and render the result page
-        return render_template("weather.html", logo=Markup(svg), location = code["location"], temp = code["temp"], zerodayDate = code["zerodayDate"], zerodayHigh = code["zerodayHigh"], onedayDate = code["onedayDate"], onedayHigh = code["onedayHigh"], twodayDate = code["twodayDate"], twodayHigh = code["twodayHigh"])
+        return render_template("weather.html", logo=Markup(svg), weather = defaultWeather, weekday = dayofWeek, currentDate = dateCurrent)
 
 
     # if GET, go to quote page
