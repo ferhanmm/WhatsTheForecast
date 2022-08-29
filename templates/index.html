@@ -34,9 +34,9 @@
   <div class="row mb-3">
     <div class="col-md-3 themed-grid-col">
     </div>
-    <div class="col-md-6 themed-grid-col">
-      <div class="row">
-        <div class="col-md-6 themed-grid-col">
+    <div class="col-md-6 themed-grid-col grid">
+      <div class="row text-bg-dark grid-container">
+        <div class="col-md-6 themed-grid-col main-weather">
           <h4><strong>{{weekday}}</strong></h4>
           <h6>{{currentDate}}</h6>
           <p>
@@ -57,41 +57,6 @@
     </div>
   </div>
 </div>
-
-<br><br><br><br>
-
-<div class="grid grid-container">
-  <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</div>
-  <div>
-    <h4><strong>{{weekday}}</strong></h4>
-    <h6>{{currentDate}}</h6>
-    <p>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-      <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"></path>
-      <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
-      </svg>   {{weather['fullWeather']['location']['name']}}, {{weather['fullWeather']['location']['region']}}
-    </p>
-    <br><br>
-    <img src="{{weather['fullWeather']['current']['condition']['icon']}}"></img>
-    <h1><strong>{{weather['fullWeather']['current']['temp_f']}}&#176F</strong></h1>
-    <p><strong>{{weather['fullWeather']['current']['condition']['text']}}</strong></p>
-    <p>High {{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}} &#8226 Low {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}</p>
-   </div>
-  <div>Ducimus quibusdam inventore delectus doloribus dignissimos. Dignissimos quos officia minus exercitationem perspiciatis harum iusto molestiae deleniti quod sunt amet recusandae autem, neque doloremque ad alias eaque consequuntur nesciunt quis eius!</div>
-</div>
-
-<br><br><br>
-
-<div class="container themed-container text-center">
-  <ul>
-    <li>Location: {{weather['fullWeather']['location']['name']}}, {{weather['fullWeather']['location']['region']}} </li>
-    <li>Current Temp: {{weather['fullWeather']['current']['temp_f']}}</li>
-    <li>High: {{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}}</li>
-    <li>Low: {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}</li>
-  </ul>
-</div>
-
-
 
 <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
     <div class="container-fluid">
