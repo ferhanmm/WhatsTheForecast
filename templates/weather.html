@@ -2,76 +2,89 @@
 
 {% block body %}
 
-    <div class="container">
-        <div class="row mb-3">
-          <div class="col-md-3 themed-grid-col">
-          </div>
-          <div class="col-md-6 themed-grid-col grid">
-            <div class="text-bg-dark grid-container">
-              <div class="col-md-6 themed-grid-col main-weather">
-                <h4><strong>{{weekday}}</strong></h4>
-                <h6>{{currentDate}}</h6>
-                <p>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                  <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"></path>
-                  <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
-                  </svg>   {{weather['fullWeather']['location']['name']}}, {{weather['fullWeather']['location']['region']}}
-                </p>
-                <br><br>
-                <img src="{{weather['fullWeather']['current']['condition']['icon']}}"></img>
-                <h1><strong>{{weather['fullWeather']['current']['temp_f']}}&#176F</strong></h1>
-                <p><strong>{{weather['fullWeather']['current']['condition']['text']}}</strong></p>
-                <p>High {{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}} &#8226 Low {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 themed-grid-col">
-          </div>
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-md-3 themed-grid-col">
+    </div>
+    <div class="col-md-6 themed-grid-col grid">
+      <div class="text-bg-dark grid-container">
+        <div class="col-md-6 themed-grid-col main-weather">
+          <h4><strong>{{weekday}}</strong></h4>
+          <h6>{{currentDate}}</h6>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"></path>
+            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+            </svg>   {{weather['fullWeather']['location']['name']}}, {{weather['fullWeather']['location']['region']}}
+          </p>
+          <br><br>
+          <img src="{{weather['fullWeather']['current']['condition']['icon']}}"></img>
+          <h1><strong>{{weather['fullWeather']['current']['temp_f']}}&#176F</strong></h1>
+          <p><strong>{{weather['fullWeather']['current']['condition']['text']}}</strong></p>
+          <p>High {{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}} &#8226 Low {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}</p>
         </div>
       </div>
+    </div>
+    <div class="col-md-3 themed-grid-col">
+    </div>
+  </div>
+</div>
 
-      <div class="container">
-        <div class="row mb-3">
-          <div class="col-md-3 themed-grid-col">
-          </div>
-          <div class="col-md-6 themed-grid-col grid">
-            <div class="text-bg-dark grid-container">
-              <div class="col-md-6 themed-grid-col main-weather">
-                <table class="table table-dark table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">First</th>
-                      <th scope="col">Last</th>
-                      <th scope="col">Handle</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td colspan="2">Larry the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 themed-grid-col">
-          </div>
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-md-3 themed-grid-col">
+    </div>
+    <div class="col-md-6 themed-grid-col grid">
+      <div class="text-bg-dark grid-container">
+        <div class="col-md-6 themed-grid-col main-weather">
+          <table class="table table-dark table-hover">
+            <thead>
+              <!-- <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr> -->
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{weather['fullWeather']['forecast']['forecastday'][0]['date']}}</th>
+                <td>{{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}}&#8457/{{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}&#8457</td>
+                <td>
+                    <img width="50px" height="50px" src="{{weather['fullWeather']['forecast']['forecastday'][0]['day']['condition']['icon']}}"></img> 
+                    {{weather['fullWeather']['forecast']['forecastday'][0]['day']['condition']['text']}}
+                </td>
+                <td><img width="20px" height="20px" src="/static/water.png"></img>{{weather['fullWeather']['forecast']['forecastday'][0]['day']['daily_chance_of_rain']}}%</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">{{weather['fullWeather']['forecast']['forecastday'][1]['date']}}</th>
+                <td>{{weather['fullWeather']['forecast']['forecastday'][1]['day']['maxtemp_f']}}&#8457/{{weather['fullWeather']['forecast']['forecastday'][1]['day']['mintemp_f']}}&#8457</td>
+                <td>
+                <img src="{{weather['fullWeather']['forecast']['forecastday'][1]['day']['condition']['icon']}}"></img> 
+                {{weather['fullWeather']['forecast']['forecastday'][1]['day']['condition']['text']}}</td>
+                <td><img width="20px" height="20px" src="/static/water.png"></img>{{weather['fullWeather']['forecast']['forecastday'][0]['day']['daily_chance_of_rain']}}%</td>
+                <td>@fat</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">{{weather['fullWeather']['forecast']['forecastday'][2]['date']}}</th>
+                <td>{{weather['fullWeather']['forecast']['forecastday'][2]['day']['maxtemp_f']}}&#8457/{{weather['fullWeather']['forecast']['forecastday'][2]['day']['mintemp_f']}}&#8457</td>
+                <td><img src="{{weather['fullWeather']['forecast']['forecastday'][2]['day']['condition']['icon']}}"></img> {{weather['fullWeather']['forecast']['forecastday'][2]['day']['condition']['text']}}</td>
+                <td><img width="20px" height="20px" src="/static/water.png"></img>{{weather['fullWeather']['forecast']['forecastday'][0]['day']['daily_chance_of_rain']}}%</td>
+                <td>@fat</td>
+                <td>@fat</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+    </div>
+    <div class="col-md-3 themed-grid-col">
+    </div>
+  </div>
+</div>
 
 {% endblock %}
+
