@@ -1,13 +1,9 @@
-import os
-import requests
-import urllib.parse
+import os, requests
 
 from flask import redirect, render_template, request, session
 from functools import wraps
 
 def iplookup(ip_addr):
-    
-    #"""Look up quote for symbol."""
 
     # Contact API
     try:
@@ -30,13 +26,10 @@ def iplookup(ip_addr):
         return None
 
 def lookup(symbol):
-    
-    #"""Look up quote for symbol."""
 
     # Contact API
     try:
         api_key = os.environ.get("API_KEY")
-        #url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={symbol}&aqi=yes"
         url = f"http://api.weatherapi.com/v1/forecast.json?key={api_key}&q={symbol}&days=10&aqi=yes&alerts=no"
         response = requests.get(url)
         response.raise_for_status()
@@ -60,9 +53,4 @@ def lookup(symbol):
     
     except (KeyError, TypeError, ValueError):
         return None
-
-    
-    
-
- # http://api.weatherapi.com/v1/current.json?key={api_key}&q=(symbol)
 

@@ -1,14 +1,10 @@
-# Greets user via a form using POST and a layout
-#import os
-import imp
+import calendar
 from flask import Flask, render_template, request, Markup, jsonify, redirect
 from helpers import lookup, iplookup
-from datetime import date, datetime
-import calendar
+from datetime import date, datetime, timedelta
+
 
 app = Flask(__name__)
-
-
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -16,6 +12,10 @@ def index():
 
         dayofWeek = calendar.day_name[(date.today()).weekday()]
         dateCurrent = (date.today()).strftime("%m/%d/%y")
+        dateToday = (date.today()).strftime("%m/%d")
+        dateTomorrow = (date.today() + timedelta(1)).strftime("%m/%d")
+        dateAfterTomorrow = (date.today() + timedelta(2)).strftime("%m/%d")
+
         svg = open('./static/logo.svg').read()
         if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
             ip_addr = request.environ['REMOTE_ADDR']
@@ -31,7 +31,7 @@ def index():
 
         defaultWeather = lookup("{},{}".format(city, region))
 
-        return render_template("index.html", logo=Markup(svg), weather = defaultWeather, weekday = dayofWeek, currentDate = dateCurrent)
+        return render_template("index.html", logo=Markup(svg), weather = defaultWeather, weekday = dayofWeek, currentDate = dateCurrent, dateToday = dateToday, dateTomorrow = dateTomorrow, dateAfterTomorrow = dateAfterTomorrow)
 
     else:
         return render_template("index.html")
@@ -44,23 +44,19 @@ def weather():
     # check if POST
     dayofWeek = calendar.day_name[(date.today()).weekday()]
     dateCurrent = (date.today()).strftime("%m/%d/%y")
+    dateToday = (date.today()).strftime("%m/%d")
+    dateTomorrow = (date.today() + timedelta(1)).strftime("%m/%d")
+    dateAfterTomorrow = (date.today() + timedelta(2)).strftime("%m/%d")
     svg = open('./static/logo.svg').read()
     if request.method == "POST":
         
         # get the symbol from user and check
         symbol = request.form.get("symbol")
-       # if not symbol:
-          #  return apology("Must provide Symbol")
-        # check if stock symbol exists in api call using the lookup
 
         code = lookup(symbol)
         defaultWeather = lookup(symbol)
 
-
-        # if stockSymbol == None:
-        #    return apology("Symbol doesn't exist")
-        # get the symbol, name, and price and render the result page
-        return render_template("weather.html", logo=Markup(svg), weather = defaultWeather, weekday = dayofWeek, currentDate = dateCurrent)
+        return render_template("weather.html", logo=Markup(svg), weather = defaultWeather, weekday = dayofWeek, currentDate = dateCurrent, dateToday = dateToday, dateTomorrow = dateTomorrow, dateAfterTomorrow = dateAfterTomorrow)
 
 
     # if GET, go to quote page

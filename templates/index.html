@@ -8,7 +8,8 @@
     </div>
     <div class="col-md-6 themed-grid-col grid">
       <div class="text-bg-dark grid-container">
-        <div class="col-md-6 themed-grid-col main-weather">
+        <div class="row mb-3 text-center">
+        <div class="">
           <h4><strong>{{weekday}}</strong></h4>
           <h6>{{currentDate}}</h6>
           <p>
@@ -23,58 +24,33 @@
           <p><strong>{{weather['fullWeather']['current']['condition']['text']}}</strong></p>
           <p>High {{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}} &#8226 Low {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}</p>
         </div>
-      </div>
-    </div>
-    <div class="col-md-3 themed-grid-col">
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row mb-3">
-    <div class="col-md-3 themed-grid-col">
-    </div>
-    <div class="col-md-6 themed-grid-col grid">
-      <div class="text-bg-dark grid-container">
-        <div class="col-md-6 themed-grid-col main-weather">
+        </div>
+        <hr>
+        <div class="row mb-3 text-center">
           <table class="table table-dark table-hover">
-            <thead>
-              <!-- <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr> -->
-            </thead>
             <tbody>
               <tr>
-                <th scope="row">{{weather['fullWeather']['forecast']['forecastday'][0]['date']}}</th>
+                <th scope="row">{{dateToday}}</th>
                 <td>{{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}}&#8457/{{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}&#8457</td>
                 <td>
-                    <img width="50px" height="50px" src="{{weather['fullWeather']['forecast']['forecastday'][0]['day']['condition']['icon']}}"></img> 
+                    <img width="35px" height="35px" src="{{weather['fullWeather']['forecast']['forecastday'][0]['day']['condition']['icon']}}"></img> 
                     {{weather['fullWeather']['forecast']['forecastday'][0]['day']['condition']['text']}}
                 </td>
                 <td><img width="20px" height="20px" src="/static/water.png"></img>{{weather['fullWeather']['forecast']['forecastday'][0]['day']['daily_chance_of_rain']}}%</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
               </tr>
               <tr>
-                <th scope="row">{{weather['fullWeather']['forecast']['forecastday'][1]['date']}}</th>
+                <th scope="row">{{dateTomorrow}}</th>
                 <td>{{weather['fullWeather']['forecast']['forecastday'][1]['day']['maxtemp_f']}}&#8457/{{weather['fullWeather']['forecast']['forecastday'][1]['day']['mintemp_f']}}&#8457</td>
                 <td>
-                <img src="{{weather['fullWeather']['forecast']['forecastday'][1]['day']['condition']['icon']}}"></img> 
+                <img width="35px" height="35px" src="{{weather['fullWeather']['forecast']['forecastday'][1]['day']['condition']['icon']}}"></img> 
                 {{weather['fullWeather']['forecast']['forecastday'][1]['day']['condition']['text']}}</td>
-                <td><img width="20px" height="20px" src="/static/water.png"></img>{{weather['fullWeather']['forecast']['forecastday'][0]['day']['daily_chance_of_rain']}}%</td>
-                <td>@fat</td>
-                <td>@fat</td>
+                <td><img width="20px" height="20px" src="/static/water.png"></img>{{weather['fullWeather']['forecast']['forecastday'][1]['day']['daily_chance_of_rain']}}%</td>
               </tr>
               <tr>
-                <th scope="row">{{weather['fullWeather']['forecast']['forecastday'][2]['date']}}</th>
+                <th scope="row">{{dateAfterTomorrow}}</th>
                 <td>{{weather['fullWeather']['forecast']['forecastday'][2]['day']['maxtemp_f']}}&#8457/{{weather['fullWeather']['forecast']['forecastday'][2]['day']['mintemp_f']}}&#8457</td>
-                <td><img src="{{weather['fullWeather']['forecast']['forecastday'][2]['day']['condition']['icon']}}"></img> {{weather['fullWeather']['forecast']['forecastday'][2]['day']['condition']['text']}}</td>
-                <td><img width="20px" height="20px" src="/static/water.png"></img>{{weather['fullWeather']['forecast']['forecastday'][0]['day']['daily_chance_of_rain']}}%</td>
-                <td>@fat</td>
-                <td>@fat</td>
+                <td><img width="35px" height="35px" src="{{weather['fullWeather']['forecast']['forecastday'][2]['day']['condition']['icon']}}"></img> {{weather['fullWeather']['forecast']['forecastday'][2]['day']['condition']['text']}}</td>
+                <td><img width="20px" height="20px" src="/static/water.png"></img>{{weather['fullWeather']['forecast']['forecastday'][2]['day']['daily_chance_of_rain']}}%</td>
               </tr>
             </tbody>
           </table>
