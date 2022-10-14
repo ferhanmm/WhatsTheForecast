@@ -62,5 +62,65 @@
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+<div id="chart"></div>
+
+<script>
+
+var options = {
+            chart: {
+                type: 'line',
+                toolbar: 'false'
+            },
+            tooltip: {
+                enabled: true
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            annotations: {
+                xaxis: [{
+                    x: "4pm",
+                    strokeDashArray: 0,
+                    borderColor: '#775DD0',
+                    label: {
+                    borderColor: '#775DD0',
+                    style: {
+                        color: '#fff',
+                        background: '#775DD0',
+                    },
+                    text: 'Friday',
+                    }
+                },{
+                    x: "10pm",
+                    strokeDashArray: 0,
+                    borderColor: '#775DD0',
+                    label: {
+                    borderColor: '#775DD0',
+                    style: {
+                        color: '#fff',
+                        background: '#775DD0',
+                    },
+                    text: 'Saturday',
+                    }
+                }
+            ]
+            },
+            series: [{
+                name: 'sales',
+                data: [78,40,45,50,49,60,70,91,125,100,110,91,70]
+            }],
+            xaxis: {
+                categories: ["12pm","1pm","2pm","3pm","4pm","5pm","6pm","7pm","8pm","9pm","10pm","11pm","12am","1am","2am","3am","4am"]
+            }
+        }
+
+  var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+  chart.render();
+
+</script>
+
 {% endblock %}
 
