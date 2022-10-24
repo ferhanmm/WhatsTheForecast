@@ -1,6 +1,6 @@
 import calendar
 from flask import Flask, render_template, request, Markup, jsonify, redirect
-from helpers import lookup, iplookup
+from helpers import lookup, iplookup, apology
 from datetime import date, datetime, timedelta
 
 
@@ -53,8 +53,12 @@ def weather():
         # get the symbol from user and check
         symbol = request.form.get("symbol")
 
-        code = lookup(symbol)
         defaultWeather = lookup(symbol)
+
+        if not defaultWeather:
+            return apology()
+        if defaultWeather == None:
+            return apology()
 
         return render_template("weather.html", logo=Markup(svg), weather = defaultWeather, weekday = dayofWeek, currentDate = dateCurrent, dateToday = dateToday, dateTomorrow = dateTomorrow, dateAfterTomorrow = dateAfterTomorrow)
 

@@ -1,6 +1,6 @@
 import os, requests
 
-from flask import redirect, render_template, request, session
+from flask import redirect, render_template, request, session, Markup
 from functools import wraps
 
 def iplookup(ip_addr):
@@ -54,3 +54,7 @@ def lookup(symbol):
     except (KeyError, TypeError, ValueError):
         return None
 
+def apology():
+    svg = open('./static/logo.svg').read()
+
+    return render_template("apology.html",logo=Markup(svg))
