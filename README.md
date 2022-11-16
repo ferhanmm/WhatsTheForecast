@@ -1,5 +1,5 @@
 # What's the forecast
-#### Video Demo:  <URL HERE>
+#### Video Demo: https://www.youtube.com/watch?v=JYuJ2s7MHEM
 **Description:**
     This is our CS50x final project, it's a simple and fast way to get current weather info and forecast. You can visit the site using the link below: 
     https://whatstheforecast.com
