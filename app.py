@@ -67,7 +67,5 @@ def weather():
     else:
         return redirect ("/")
 
-@app.route("/chart")
-def chart():
-    return render_template("chart.html")
+
 
