@@ -8,6 +8,7 @@
     -   Ferhan Moton
     -   Mazen Almontheri
 1. **Hosting**
+
    - Domain name
         -   We chose this domain name to improve search engine optimization, and its easier to remember. We purchased the domain from Google Domains.
 
