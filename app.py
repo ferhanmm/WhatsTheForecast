@@ -28,6 +28,7 @@ def index():
 
         locationcheck = iplookup(ip_addr)
         print(f"request.environ: {request.environ}")
+        print(f"reaquest.headers: {request.headers}")
         print(f"HTTP_X_FORWARDED_FOR: {request.environ.get('HTTP_X_FORWARDED_FOR')}")
         print(f"REMOTE_ADDR: {request.environ['REMOTE_ADDR']}")
         print(f"{ip_addr}: {locationcheck}")
