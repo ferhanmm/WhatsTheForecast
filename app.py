@@ -27,8 +27,11 @@ def index():
             ip_addr = "99.61.181.42" 
 
         locationcheck = iplookup(ip_addr)
+        print(f"{ip_addr}: {locationcheck}")
         city=locationcheck["city"]
         region=locationcheck["region"]
+
+        
 
         defaultWeather = lookup("{},{}".format(city, region))
 
