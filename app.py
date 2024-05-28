@@ -21,7 +21,7 @@ def index():
         if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
             ip_addr = request.environ['REMOTE_ADDR']
         else:
-            ip_addr = request.environ['HTTP_X_FORWARDED_FOR']
+            ip_addr = request.environ['HTTP_X_FORWARDED_FOR'].split(',')[0]
 
         if ip_addr == "127.0.0.1":
             ip_addr = "99.61.181.42" 
