@@ -18,6 +18,7 @@ def index():
         dateAfterTomorrow = (date.today() + timedelta(2)).strftime("%m/%d")
 
         svg = open('./static/logo.svg').read()
+        githubsvg = open('./static/github64.svg').read()
         if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
             ip_addr = request.environ['REMOTE_ADDR']
         else:
@@ -40,7 +41,7 @@ def index():
 
         defaultWeather = lookup("{},{}".format(city, region))
 
-        return render_template("index.html", logo=Markup(svg), weather = defaultWeather, weekday = dayofWeek, currentDate = dateCurrent, dateToday = dateToday, dateTomorrow = dateTomorrow, dateAfterTomorrow = dateAfterTomorrow)
+        return render_template("index.html", logo=Markup(svg), githublogo=Markup(githubsvg), weather = defaultWeather, weekday = dayofWeek, currentDate = dateCurrent, dateToday = dateToday, dateTomorrow = dateTomorrow, dateAfterTomorrow = dateAfterTomorrow)
 
     else:
         return render_template("index.html")
@@ -57,6 +58,7 @@ def weather():
     dateTomorrow = (date.today() + timedelta(1)).strftime("%m/%d")
     dateAfterTomorrow = (date.today() + timedelta(2)).strftime("%m/%d")
     svg = open('./static/logo.svg').read()
+    githubsvg = open('./static/github64.svg').read()
     if request.method == "POST":
         
         # get the symbol from user and check
@@ -69,7 +71,7 @@ def weather():
         if defaultWeather == None:
             return apology()
 
-        return render_template("weather.html", logo=Markup(svg), weather = defaultWeather, weekday = dayofWeek, currentDate = dateCurrent, dateToday = dateToday, dateTomorrow = dateTomorrow, dateAfterTomorrow = dateAfterTomorrow)
+        return render_template("weather.html", logo=Markup(svg), githublogo=Markup(githubsvg), weather = defaultWeather, weekday = dayofWeek, currentDate = dateCurrent, dateToday = dateToday, dateTomorrow = dateTomorrow, dateAfterTomorrow = dateAfterTomorrow)
 
 
     # if GET, go to quote page
