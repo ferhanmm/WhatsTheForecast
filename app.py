@@ -27,6 +27,7 @@ def index():
             ip_addr = "99.61.181.42" 
 
         locationcheck = iplookup(ip_addr)
+        print(f"HTTP_X_FORWARDED_FOR: {request.environ.get('HTTP_X_FORWARDED_FOR')}")
         print(f"{ip_addr}: {locationcheck}")
         city=locationcheck["city"]
         region=locationcheck["region"]
