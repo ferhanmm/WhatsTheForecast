@@ -12,6 +12,8 @@ def iplookup(ip_addr):
         url = f"http://api.weatherapi.com/v1/ip.json?key={api_key}&q={ip_addr}"
         response = requests.get(url)
         response.raise_for_status()
+        url = f"http://ipwho.is/{ip_addr}"
+        response = requests.get(url)
     except requests.RequestException:
         return None
 
@@ -20,7 +22,7 @@ def iplookup(ip_addr):
         ip = response.json()
         return {
             "city": ip['city'],
-            "region": ip['region']
+            "region": ip['region_code']
             }
     
     except (KeyError, TypeError, ValueError):
