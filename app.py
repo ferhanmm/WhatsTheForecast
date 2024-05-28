@@ -1,5 +1,6 @@
 import calendar
-from flask import Flask, render_template, request, Markup, jsonify, redirect
+from flask import Flask, render_template, request, jsonify, redirect
+from markupsafe import Markup
 from helpers import lookup, iplookup, apology
 from datetime import date, datetime, timedelta
 

@@ -56,25 +56,21 @@
     <body class="d-flex flex-column min-vh-100">
 
         <header class="p-3 text-bg-dark">
-            <div class="container">
-              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                  <svg width="300" height="100">
-                  {{ logo }}
-                  </svg>
-                </a>
+          <div class="container">
+            <div class="d-flex flex-column align-items-center">
+              <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <svg width="300" height="100">
+                {{ logo }}
+                </svg>
+              </a>
           
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                
-                </ul>
-          
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="/weather" method="post" role="search">
-                  <input type="search" class="form-control form-control-dark text-bg-dark" name="symbol" placeholder="Enter City or Zip" aria-label="Search">
-                </form>
-          
-              </div>
+              <form class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" action="/weather" method="post" role="search">
+                <input type="search" class="form-control form-control-dark text-bg-dark" name="symbol" placeholder="Enter City or Zip" aria-label="Search">
+              </form>
+
             </div>
-          </header>
+          </div>
+        </header>
 
         {% block body %}{% endblock %}
 

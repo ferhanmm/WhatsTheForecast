@@ -18,7 +18,6 @@
             <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
             </svg>   {{weather['fullWeather']['location']['name']}}, {{weather['fullWeather']['location']['region']}}
           </p>
-          <br><br>
           <img src="{{weather['fullWeather']['current']['condition']['icon']}}"></img>
           <h1><strong>{{weather['fullWeather']['current']['temp_f']}}&#176F</strong></h1>
           <p><strong>{{weather['fullWeather']['current']['condition']['text']}}</strong></p>
@@ -31,7 +30,7 @@
             <tbody>
               <tr>
                 <th scope="row">{{dateToday}}</th>
-                <td>{{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}} &#8226 {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}&#8457</td>
+                <td><strong>{{weather['fullWeather']['forecast']['forecastday'][0]['day']['maxtemp_f']}}</strong> / {{weather['fullWeather']['forecast']['forecastday'][0]['day']['mintemp_f']}}&#8457</td>
                 <td>
                     <img width="35px" height="35px" src="{{weather['fullWeather']['forecast']['forecastday'][0]['day']['condition']['icon']}}"></img> 
                     {{weather['fullWeather']['forecast']['forecastday'][0]['day']['condition']['text']}}
@@ -40,7 +39,7 @@
               </tr>
               <tr>
                 <th scope="row">{{dateTomorrow}}</th>
-                <td>{{weather['fullWeather']['forecast']['forecastday'][1]['day']['maxtemp_f']}} &#8226 {{weather['fullWeather']['forecast']['forecastday'][1]['day']['mintemp_f']}}&#8457</td>
+                <td><strong>{{weather['fullWeather']['forecast']['forecastday'][1]['day']['maxtemp_f']}}</strong> &#8226 {{weather['fullWeather']['forecast']['forecastday'][1]['day']['mintemp_f']}}&#8457</td>
                 <td>
                 <img width="35px" height="35px" src="{{weather['fullWeather']['forecast']['forecastday'][1]['day']['condition']['icon']}}"></img> 
                 {{weather['fullWeather']['forecast']['forecastday'][1]['day']['condition']['text']}}</td>
@@ -48,7 +47,7 @@
               </tr>
               <tr>
                 <th scope="row">{{dateAfterTomorrow}}</th>
-                <td>{{weather['fullWeather']['forecast']['forecastday'][2]['day']['maxtemp_f']}} &#8226 {{weather['fullWeather']['forecast']['forecastday'][2]['day']['mintemp_f']}}&#8457</td>
+                <td><strong>{{weather['fullWeather']['forecast']['forecastday'][2]['day']['maxtemp_f']}}</strong> &#8226 {{weather['fullWeather']['forecast']['forecastday'][2]['day']['mintemp_f']}}&#8457</td>
                 <td><img width="35px" height="35px" src="{{weather['fullWeather']['forecast']['forecastday'][2]['day']['condition']['icon']}}"></img> {{weather['fullWeather']['forecast']['forecastday'][2]['day']['condition']['text']}}</td>
                 <td><img width="20px" height="20px" src="/static/water.png"></img>{{weather['fullWeather']['forecast']['forecastday'][2]['day']['daily_chance_of_rain']}}%</td>
               </tr>

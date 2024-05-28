@@ -1,6 +1,7 @@
 import os, requests
 
-from flask import redirect, render_template, request, session, Markup
+from flask import redirect, render_template, request, session
+from markupsafe import Markup
 from functools import wraps
 
 def iplookup(ip_addr):
