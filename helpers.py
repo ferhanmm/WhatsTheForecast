@@ -8,12 +8,9 @@ def iplookup(ip_addr):
 
     # Contact API
     try:
-        api_key = os.environ.get("API_KEY")
-        url = f"http://api.weatherapi.com/v1/ip.json?key={api_key}&q={ip_addr}"
-        response = requests.get(url)
-        response.raise_for_status()
         url = f"http://ipwho.is/{ip_addr}"
         response = requests.get(url)
+        response.raise_for_status()
     except requests.RequestException:
         return None
 
