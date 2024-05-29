@@ -13,9 +13,9 @@ def index():
 
         dayofWeek = calendar.day_name[(date.today()).weekday()]
         dateCurrent = (date.today()).strftime("%m/%d/%y")
-        dateToday = (date.today()).strftime("%m/%d")
-        dateTomorrow = (date.today() + timedelta(1)).strftime("%m/%d")
-        dateAfterTomorrow = (date.today() + timedelta(2)).strftime("%m/%d")
+        dateToday = (date.today()).strftime("%a").upper()
+        dateTomorrow = (date.today() + timedelta(1)).strftime("%a").upper()
+        dateAfterTomorrow = (date.today() + timedelta(2)).strftime("%a").upper()
 
         svg = open('./static/logo.svg').read()
         githubsvg = open('./static/github64.svg').read()
@@ -54,9 +54,9 @@ def weather():
     # check if POST
     dayofWeek = calendar.day_name[(date.today()).weekday()]
     dateCurrent = (date.today()).strftime("%m/%d/%y")
-    dateToday = (date.today()).strftime("%m/%d")
-    dateTomorrow = (date.today() + timedelta(1)).strftime("%m/%d")
-    dateAfterTomorrow = (date.today() + timedelta(2)).strftime("%m/%d")
+    dateToday = (date.today()).strftime("%a").upper()
+    dateTomorrow = (date.today() + timedelta(1)).strftime("%a").upper()
+    dateAfterTomorrow = (date.today() + timedelta(2)).strftime("%a").upper()
     svg = open('./static/logo.svg').read()
     githubsvg = open('./static/github64.svg').read()
     if request.method == "POST":
