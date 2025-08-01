@@ -49,4 +49,4 @@
 4. **GitHub**
     -   We used GitHub to collaborate project development, we have connected our hosting server with GitHub to automate code deployment and push updates.
     -   We have installed GitHub desktop and linked it with our account to fetch new code and push changes.
-    -   This feature has added so much value to our project as it streamlines development and it cut down 
+    -   This feature has added so much value to our project as it streamlines development and it cut down.
